@@ -54,7 +54,7 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI','sqlite:///posts.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI', 'sqlite:///posts.db')
 
 
 db = SQLAlchemy(model_class=Base)
@@ -272,6 +272,7 @@ def about():
 
 MAIL_ADDRESS = os.environ.get("EMAIL_KEY")
 MAIL_APP_PW = os.environ.get("PASSWORD_KEY")
+
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
